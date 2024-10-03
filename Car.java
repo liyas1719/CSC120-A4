@@ -9,11 +9,14 @@ public class Car {
 
     public Car(int maxcapacity) {
         this.maxcapacity = maxcapacity;
-       // public List<Integer> passengers = Arrays.asList(new Integer[maxcapacity]);
+        peopleonboard = new ArrayList<>();
+
+        //public List<Integer> passengers = Arrays.asList(new Integer[maxcapacity]);
     }
 
     public int getCapacity() {
         return maxcapacity;
+        
     }
 
     public int seatsRemaining() {
@@ -22,12 +25,13 @@ public class Car {
     public boolean addPassenger(Passenger p) {
         if (peopleonboard.size() < maxcapacity) {
             peopleonboard.add(p);
-            return peopleonboard.size() <= maxcapacity;}
+            return true;}
         else {
-            return false;
-        }
-        
+           return false;}
     }
+        
+        
+    
     
     public boolean removePassenger(Passenger p) {
         if (peopleonboard.contains(p)) {
@@ -39,21 +43,27 @@ public class Car {
         }
     }
 
-    public ArrayList printManifest() {
+    public void printManifest() {
         if (peopleonboard.size() > 0) {
-            System.out.println(peopleonboard);
+            for (int i = 0; i <= peopleonboard.size(); i++ ){
+                System.out.println(peopleonboard.get(i));}
         }
         else {
             System.out.println("This car is EMPTY.");
         }
     }
 
-}    public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 70, 100.0);
-        while (myEngine.go()) {
-            System.out.println("Choo choo!");
-        }
-        System.out.println("Out of fuel.");}
+    public static void main(String[] args) {
+        Car myCar = new Car(100);
+        int a = myCar.seatsRemaining();
+        System.out.println(a);
+        Passenger myPassenger = new Passenger("stacy");
+        myCar.addPassenger(myPassenger);
+        myCar.printManifest();
+        
+        
+    }
+}
 //Next, we'll set to work on the `Car` class. The `Car` class will need:
 
 //  - an `ArrayList` where it will store the `Passenger`s currently onboard, and an `int` for the `Car`'s maximum capacity (since `ArrayList`s 

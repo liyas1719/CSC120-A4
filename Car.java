@@ -15,8 +15,7 @@ public class Car {
     }
 
     public int getCapacity() {
-        return maxcapacity;
-        
+        return maxcapacity; 
     }
 
     public int seatsRemaining() {

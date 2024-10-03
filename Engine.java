@@ -1,7 +1,7 @@
 public class Engine {
-    public FuelType fueltype;
-    public double maxfuel;
-    public double currentfuellevel; 
+    private FuelType fueltype;
+    private double maxfuel;
+    private double currentfuellevel; 
 
     public Engine (FuelType fueltype, double maxfuel, double currentfuellevel) {
         this.fueltype = fueltype;

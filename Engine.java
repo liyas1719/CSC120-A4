@@ -1,7 +1,7 @@
 public class Engine {
-    private FuelType fueltype;
-    private double maxfuel;
-    private double currentfuellevel; 
+    public FuelType fueltype;
+    public double maxfuel;
+    public double currentfuellevel; 
 
     public Engine (FuelType fueltype, double maxfuel, double currentfuellevel) {
         this.fueltype = fueltype;
@@ -20,8 +20,6 @@ public class Engine {
         currentfuellevel = currentfuellevel-20;
         System.out.println("Current fuel level is " + currentfuellevel);
         return currentfuellevel > 0;
-    
-    
     
 
 }

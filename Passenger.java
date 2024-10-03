@@ -3,14 +3,17 @@ public class Passenger {
     public String name;
 
     public Passenger(String name) {
-        this.name = name;
+        this.name = name;}
         
-   // public void boardcar(Car c) {
-
-    //}
+    public void boardcar(Car c) {
+        c.addPassenger(this);}
+    
+    public void getOffCar(Car c) {
+        c.removePassenger(this);
+    }
 
     }
-}
+
 // Now that you've got a functional `Car` class, the `Passenger` class can be expanded to use the `Car`'s methods to implement some of its own:
 
 // - `boardCar(Car c)` can call `c.addPassenger(this)` to board a given `Car` (_Hint: this method should check the value that gets `return`ed 

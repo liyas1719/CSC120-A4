@@ -1,15 +1,14 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List; // import the ArrayList class
+import java.util.ArrayList; // import the ArrayList class
 
 public class Car {
-    public int maxcapacity;
+    private int maxcapacity;
     public int passengercount;
     public ArrayList<Passenger> peopleonboard; // makes a list of passengers
 
+    // creates an array list for peopleonboard
     public Car(int maxcapacity) {
         this.maxcapacity = maxcapacity;
-        peopleonboard = new ArrayList<>();
+        this.peopleonboard = new ArrayList<>();
     }
 
     // returns maximum capacity
@@ -25,8 +24,12 @@ public class Car {
     // adds passenger to list if there are seats remaining
     public boolean addPassenger(Passenger p) {
         if (peopleonboard.size() < maxcapacity) {
-            peopleonboard.add(p);
-            return true;
+            if (peopleonboard.contains(p)) {
+                return false;
+            } else {
+                peopleonboard.add(p);
+                return true;
+            }
         } else {
            return false;
         }
@@ -45,7 +48,7 @@ public class Car {
     // prints out all people on baord if there are any
     public void printManifest() {
         if (peopleonboard.size() > 0) {
-            for (int i = 0; i <= peopleonboard.size(); i++ ){
+            for (int i = 0; i < peopleonboard.size(); i++ ){
                 System.out.println(peopleonboard.get(i));
             }
         } else {

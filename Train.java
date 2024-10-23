@@ -2,9 +2,7 @@ import java.util.ArrayList;
 
 public class Train {
     private final Engine e;
-    public int totalseatsremaining;
-    public int totalmaxcapacity;
-    public ArrayList<Car> carsoftrain;
+    private ArrayList<Car> carsoftrain;
 
     public Train(FuelType fuelType, double fuelCapacity, int Carnum, int passengerCapacity) {
         this.e = new Engine(fuelType, fuelCapacity, passengerCapacity);

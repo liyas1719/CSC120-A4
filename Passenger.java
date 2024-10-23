@@ -6,7 +6,7 @@ public class Passenger {
         this.name = name;}
         
     // adds passenger to car
-    public void boardcar(Car c) {
+    public void boardCar(Car c) {
         c.addPassenger(this);
         if (c.addPassenger(this) == false) {
             System.out.println("Unable to board car.");

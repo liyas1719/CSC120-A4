@@ -15,6 +15,16 @@ public class Engine {
         return fueltype;
     }
 
+    // returns max fuel 
+    public double maxfuel() {
+        return maxfuel;
+    }
+
+    // returns current fuel level
+    public double currentfuellevel() {
+        return currentfuellevel;
+    }
+
     // sets fuel level to maxiumum fuel level (refuels engine)
     public double refuel() {
         currentfuellevel = maxfuel;
@@ -22,9 +32,12 @@ public class Engine {
         return currentfuellevel;
     }
 
-    // simulates going by decreasing fuel level and returns boolean absed on whether or not there is fuel left. also prints fuel level after going
+    // simulates going by decreasing fuel level and returns boolean based on whether or not there is fuel left. also prints fuel level after going
     public boolean go() {
         currentfuellevel = currentfuellevel-20;
+        if (currentfuellevel <= 0) {
+            this.refuel();
+        }
         System.out.println("Current fuel level is " + currentfuellevel);
         return currentfuellevel > 0;
     }

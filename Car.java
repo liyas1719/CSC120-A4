@@ -2,8 +2,8 @@ import java.util.ArrayList; // import the ArrayList class
 
 public class Car {
     private int maxcapacity;
-    public int passengercount;
-    public ArrayList<Passenger> peopleonboard; // makes a list of passengers
+    private int passengercount;
+    private ArrayList<Passenger> peopleonboard; // makes a list of passengers
 
     // creates an array list for peopleonboard
     public Car(int maxcapacity) {

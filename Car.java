@@ -2,8 +2,8 @@ import java.util.ArrayList; // import the ArrayList class
 
 public class Car {
     private int maxcapacity;
-    private int passengercount;
     private ArrayList<Passenger> peopleonboard; // makes a list of passengers
+    Passenger givenPassenger;
 
     // creates an array list for peopleonboard
     public Car(int maxcapacity) {
@@ -49,7 +49,8 @@ public class Car {
     public void printManifest() {
         if (peopleonboard.size() > 0) {
             for (int i = 0; i < peopleonboard.size(); i++ ){
-                System.out.println(peopleonboard.get(i));
+                givenPassenger = peopleonboard.get(i);
+                System.out.println(givenPassenger.name);
             }
         } else {
             System.out.println("This car is EMPTY.");
@@ -62,6 +63,7 @@ public class Car {
         System.out.println(a);
         Passenger myPassenger = new Passenger("stacy");
         myCar.addPassenger(myPassenger);
+        myPassenger.boardCar(myCar);
         myCar.printManifest();
     }
 }

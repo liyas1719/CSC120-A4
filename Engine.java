@@ -34,10 +34,10 @@ public class Engine {
 
     // simulates going by decreasing fuel level and returns boolean based on whether or not there is fuel left. also prints fuel level after going
     public boolean go() {
-        currentfuellevel = currentfuellevel-20;
-        if (currentfuellevel <= 0) {
+        if (currentfuellevel < 20) {
             this.refuel();
         }
+        currentfuellevel = currentfuellevel-20;
         System.out.println("Current fuel level is " + currentfuellevel);
         return currentfuellevel > 0;
     }

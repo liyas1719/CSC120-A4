@@ -5,7 +5,10 @@ public class Passenger {
     public Passenger(String name) {
         this.name = name;}
         
-    // adds passenger to car
+    /**
+     * method that allows passenger to board the car if there is room and they are not already boarded
+     * @param c car that the person wants to board
+     */
     public void boardCar(Car c) {
         c.addPassenger(this);
         if (c.addPassenger(this) == false) {
@@ -13,7 +16,10 @@ public class Passenger {
         }
     }
     
-    // removes passenger from car
+    /**
+     * method that allows passenger to get off of car if they are on it
+     * @param c the car that the person wants to get off of
+     */
     public void getOffCar(Car c) {
         c.removePassenger(this);
         if (c.removePassenger(this) == false) {

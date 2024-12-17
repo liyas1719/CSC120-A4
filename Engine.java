@@ -4,10 +4,10 @@ public class Engine {
     private double currentFuelLevel; 
 
     /**
-     *  constructor for  engine 
-     *  @param fuelType type of fuel
-     *  @param maxFuel maxiumum fuel the engine can take
-     *  @param currentFuelLevel the current level of fuel
+     * constructor for  engine 
+     * @param fuelType type of fuel
+     * @param maxFuel maxiumum fuel the engine can take
+     * @param currentFuelLevel the current level of fuel
      */
     public Engine (FuelType fuelType, double maxFuel, double currentFuelLevel) {
         this.fuelType = fuelType;
@@ -16,32 +16,32 @@ public class Engine {
     }
 
      /**
-     *  accessor for fuel type of engine
-     *  @return fuel type of engine
+     * accessor for fuel type of engine
+     * @return fuel type of engine
      */
     public FuelType getFuelType() {
         return fuelType;
     }
 
     /**
-     *  accessor for max fuel of engine
-     *  @return max fuel of engine
+     * accessor for max fuel of engine
+     * @return max fuel of engine
      */
     public double getMaxFuel() {
         return maxFuel;
     }
 
     /**
-     *  accessor for current fuel level of engine
-     *  @return current level of fuel of engine
+     * accessor for current fuel level of engine
+     * @return current level of fuel of engine
      */
     public double getCurrentFuelLevel() {
         return currentFuelLevel;
     }
 
     /**
-     *  method that refuels the engine by setting current fuel to max
-     *  @return current fuel level of engine
+     * method that refuels the engine by setting current fuel to max
+     * @return current fuel level of engine
      */
     public double refuel() {
         currentFuelLevel = maxFuel;
@@ -50,8 +50,8 @@ public class Engine {
     }
 
     /**
-     *  method that simulates going by decreasing fuel level
-     *  @return boolean based on whether or not tank is empty
+     * method that simulates going by decreasing fuel level
+     * @return boolean based on whether or not tank is empty
      */
     public boolean go() {
         if (currentFuelLevel < 20) {
@@ -63,7 +63,7 @@ public class Engine {
     }
 
     /**
-     *  creates an engine and goes until out of fuel
+     * creates an engine and goes until out of fuel
      */
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 70, 100.0);

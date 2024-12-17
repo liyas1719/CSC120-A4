@@ -6,8 +6,8 @@ public class Car {
     Passenger givenPassenger;
 
     /**
-     *  constructor for car and creates an arraylist for people on board
-     *  @param maxCapacity maximum capacity of car
+     * constructor for car and creates an arraylist for people on board
+     * @param maxCapacity maximum capacity of car
      */
     public Car(int maxCapacity) {
         this.maxCapacity = maxCapacity;
@@ -15,16 +15,16 @@ public class Car {
     }
 
     /**
-     *  accessor for max capacity of car
-     *  @return maximum capacity of car
+     * accessor for max capacity of car
+     * @return maximum capacity of car
      */
     public int getMaxCapacity() {
         return maxCapacity; 
     }
 
     /**
-     *  accessor for seats remaining of car
-     *  @return seats remaining of car
+     * accessor for seats remaining of car
+     * @return seats remaining of car
      */
     // returns seats remaining
     public int seatsRemaining() {
@@ -32,9 +32,9 @@ public class Car {
     }
 
     /**
-     *  method to add passenger to car
-     *  @param p passenger
-     *  @return boolean based on whether or not passenger was added
+     * method to add passenger to car
+     * @param p passenger
+     * @return boolean based on whether or not passenger was added
      */
     public boolean addPassenger(Passenger p) {
         if (peopleOnBoard.size() < maxCapacity) {
@@ -50,9 +50,9 @@ public class Car {
     }
 
     /**
-     *  method to remove passenger from car if they are boarded
-     *  @param p passenger
-     *  @return boolean based on whether or not passenger was removed
+     * method to remove passenger from car if they are boarded
+     * @param p passenger
+     * @return boolean based on whether or not passenger was removed
      */
     public boolean removePassenger(Passenger p) {
         if (peopleOnBoard.contains(p)) {
@@ -64,7 +64,7 @@ public class Car {
     }
 
     /**
-     *  method to print all current passengers or that the car is empty if that is the case
+     * method to print all current passengers or that the car is empty if that is the case
      */
     public void printManifest() {
         if (peopleOnBoard.size() > 0) {
@@ -78,7 +78,7 @@ public class Car {
     }
 
     /**
-     *  creates a car, prints seats remaining, creates a passenger, adds passenger, tries to board passenger, and prints list of passengers
+     * creates a car, prints seats remaining, creates a passenger, adds passenger, tries to board passenger, and prints list of passengers
      */
     public static void main(String[] args) {
         Car myCar = new Car(100);

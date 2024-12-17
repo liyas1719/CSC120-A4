@@ -5,11 +5,11 @@ public class Train {
     private ArrayList<Car> carsOfTrain;
 
     /**
-     *  constructor for train, creates an arraylist of cars, adds cars to that arraylist
-     *  @param fuelType type of fuel
-     *  @param fuelCapacity capacity for fuel
-     *  @param carNum number of the car
-     *  @param passengerCapacity capacity for passengers
+     * constructor for train, creates an arraylist of cars, adds cars to that arraylist
+     * @param fuelType type of fuel
+     * @param fuelCapacity capacity for fuel
+     * @param carNum number of the car
+     * @param passengerCapacity capacity for passengers
      */
     public Train(FuelType fuelType, double fuelCapacity, int carNum, int passengerCapacity) {
         this.e = new Engine(fuelType, fuelCapacity, passengerCapacity);
@@ -21,8 +21,8 @@ public class Train {
     }
 
     /**
-     *  accessor for engine
-     *  @return engine
+     * accessor for engine
+     * @return engine
      */
     // gets and returns engine
     public Engine getEngine() {
@@ -30,17 +30,17 @@ public class Train {
     }
 
     /**
-     *  accessor for car
-     *  @param i number of the car that is being gotten
-     *  @return car of this train
+     * accessor for car
+     * @param i number of the car that is being gotten
+     * @return car of this train
      */
     public Car getCar(int i) { 
         return this.carsOfTrain.get(i);
     }
 
     /**
-     *  method to calculate maximum capacity of train
-     *  @return the maximum capacity of train
+     * method to calculate maximum capacity of train
+     * @return the maximum capacity of train
      */
     // reurns max capacity for whole train
     public int getMaxCapacity() {
@@ -52,8 +52,8 @@ public class Train {
     }
     
     /**
-     *  method to calculate the number of seats remaining in train
-     *  @return the number of serats remaining on the train
+     * method to calculate the number of seats remaining in train
+     * @return the number of serats remaining on the train
      */
     public int seatsRemaining() {
         int trainSeatsRemaining = 0;
@@ -64,7 +64,7 @@ public class Train {
     }
 
     /**
-     *  prints list of all the passengers on the train
+     * prints list of all the passengers on the train
      */
     public void printManifest() {
         for (int m =0; m<carsOfTrain.size(); m++) {

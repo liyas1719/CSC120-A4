@@ -32,7 +32,7 @@ YES 1 pt: The `Car` class has a `printManifest()` method that prints a nicely-fo
 
 YES 1 pt: The `Passenger` class uses appropriate methods from the `Car` class to implement its `boardCar(...)` and `getOffCar(...)` methods
 
-MAYBE 1 pt: The `Train` class has all expected attributes / relationships with the other classes
+YES 1 pt: The `Train` class has all expected attributes / relationships with the other classes
 
 YES 1 pt: The `Train` class has all expected methods, making use of methods from other classes as appropriate
 
@@ -42,11 +42,11 @@ YES 1 pt: The `Train` class has all expected methods, making use of methods from
 
 YES 4 pts: Programs compile without errors or warnings
 
-MAYBE 2 pts: Executes fully & consistently without crashing (exception/freeze)
+YES 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-SOMEWHAT 2 pt: Complies with style guidelines (missing items 1 pt each):
+YES 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      NO Classes & class members all have Javadoc header comments
+      YES Classes & class members all have Javadoc header comments
 
       YES Clear and consistent indentation of bracketed sections
 

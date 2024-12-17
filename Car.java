@@ -1,33 +1,47 @@
 import java.util.ArrayList; // import the ArrayList class
 
 public class Car {
-    private int maxcapacity;
-    private ArrayList<Passenger> peopleonboard; // makes a list of passengers
+    private int maxCapacity;
+    private ArrayList<Passenger> peopleOnBoard; // makes a list of passengers
     Passenger givenPassenger;
 
-    // creates an array list for peopleonboard
-    public Car(int maxcapacity) {
-        this.maxcapacity = maxcapacity;
-        this.peopleonboard = new ArrayList<>();
+    /**
+     *  constructor for car and creates an arraylist for people on board
+     *  @param maxCapacity maximum capacity of car
+     */
+    public Car(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        this.peopleOnBoard = new ArrayList<>();
     }
 
-    // returns maximum capacity
-    public int getCapacity() {
-        return maxcapacity; 
+    /**
+     *  accessor for max capacity of car
+     *  @return maximum capacity of car
+     */
+    public int getMaxCapacity() {
+        return maxCapacity; 
     }
 
+    /**
+     *  accessor for seats remaining of car
+     *  @return seats remaining of car
+     */
     // returns seats remaining
     public int seatsRemaining() {
-        return maxcapacity - peopleonboard.size();
+        return maxCapacity - peopleOnBoard.size();
     }
 
-    // adds passenger to list if there are seats remaining
+    /**
+     *  method to add passenger to car
+     *  @param p passenger
+     *  @return boolean based on whether or not passenger was added
+     */
     public boolean addPassenger(Passenger p) {
-        if (peopleonboard.size() < maxcapacity) {
-            if (peopleonboard.contains(p)) {
+        if (peopleOnBoard.size() < maxCapacity) {
+            if (peopleOnBoard.contains(p)) {
                 return false;
             } else {
-                peopleonboard.add(p);
+                peopleOnBoard.add(p);
                 return true;
             }
         } else {
@@ -35,21 +49,27 @@ public class Car {
         }
     }
 
-    // if the passenger is on baord, they are removed
+    /**
+     *  method to remove passenger from car if they are boarded
+     *  @param p passenger
+     *  @return boolean based on whether or not passenger was removed
+     */
     public boolean removePassenger(Passenger p) {
-        if (peopleonboard.contains(p)) {
-            peopleonboard.remove(p);
+        if (peopleOnBoard.contains(p)) {
+            peopleOnBoard.remove(p);
             return true;
         } else {
             return false;
         }
     }
 
-    // prints out all people on baord if there are any
+    /**
+     *  method to print all current passengers or that the car is empty if that is the case
+     */
     public void printManifest() {
-        if (peopleonboard.size() > 0) {
-            for (int i = 0; i < peopleonboard.size(); i++ ){
-                givenPassenger = peopleonboard.get(i);
+        if (peopleOnBoard.size() > 0) {
+            for (int i = 0; i < peopleOnBoard.size(); i++ ){
+                givenPassenger = peopleOnBoard.get(i);
                 System.out.println(givenPassenger.name);
             }
         } else {
@@ -57,6 +77,9 @@ public class Car {
         }
     }
 
+    /**
+     *  creates a car, prints seats remaining, creates a passenger, adds passenger, tries to board passenger, and prints list of passengers
+     */
     public static void main(String[] args) {
         Car myCar = new Car(100);
         int a = myCar.seatsRemaining();

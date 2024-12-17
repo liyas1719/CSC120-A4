@@ -1,48 +1,70 @@
 public class Engine {
-    private FuelType fueltype;
-    private double maxfuel;
-    private double currentfuellevel; 
+    private FuelType fuelType;
+    private double maxFuel;
+    private double currentFuelLevel; 
 
-    // creating engine that takes in fuel type, maxiumum fuel level and current fuel level
-    public Engine (FuelType fueltype, double maxfuel, double currentfuellevel) {
-        this.fueltype = fueltype;
-        this.maxfuel = maxfuel;
-        this.currentfuellevel = currentfuellevel;
+    /**
+     *  constructor for  engine 
+     *  @param fuelType type of fuel
+     *  @param maxFuel maxiumum fuel the engine can take
+     *  @param currentFuelLevel the current level of fuel
+     */
+    public Engine (FuelType fuelType, double maxFuel, double currentFuelLevel) {
+        this.fuelType = fuelType;
+        this.maxFuel = maxFuel;
+        this.currentFuelLevel = currentFuelLevel;
     }
 
-    // returns fuel type
-    public FuelType fueltype() {
-        return fueltype;
+     /**
+     *  accessor for fuel type of engine
+     *  @return fuel type of engine
+     */
+    public FuelType getFuelType() {
+        return fuelType;
     }
 
-    // returns max fuel 
-    public double maxfuel() {
-        return maxfuel;
+    /**
+     *  accessor for max fuel of engine
+     *  @return max fuel of engine
+     */
+    public double getMaxFuel() {
+        return maxFuel;
     }
 
-    // returns current fuel level
-    public double currentfuellevel() {
-        return currentfuellevel;
+    /**
+     *  accessor for current fuel level of engine
+     *  @return current level of fuel of engine
+     */
+    public double getCurrentFuelLevel() {
+        return currentFuelLevel;
     }
 
-    // sets fuel level to maxiumum fuel level (refuels engine)
+    /**
+     *  method that refuels the engine by setting current fuel to max
+     *  @return current fuel level of engine
+     */
     public double refuel() {
-        currentfuellevel = maxfuel;
-        System.out.println("Refuel complete. Tank currently has " + currentfuellevel);
-        return currentfuellevel;
+        currentFuelLevel = maxFuel;
+        System.out.println("Refuel complete. Tank currently has " + currentFuelLevel);
+        return currentFuelLevel;
     }
 
-    // simulates going by decreasing fuel level and returns boolean based on whether or not there is fuel left. also prints fuel level after going
+    /**
+     *  method that simulates going by decreasing fuel level
+     *  @return boolean based on whether or not tank is empty
+     */
     public boolean go() {
-        if (currentfuellevel < 20) {
+        if (currentFuelLevel < 20) {
             this.refuel();
         }
-        currentfuellevel = currentfuellevel-20;
-        System.out.println("Current fuel level is " + currentfuellevel);
-        return currentfuellevel > 0;
+        currentFuelLevel = currentFuelLevel-20;
+        System.out.println("Current fuel level is " + currentFuelLevel);
+        return currentFuelLevel > 0;
     }
 
-    // creates and engine, goes until out of fuel
+    /**
+     *  creates an engine and goes until out of fuel
+     */
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 70, 100.0);
         while (myEngine.go()) {
